@@ -2,5 +2,8 @@
 <div><%= @article.body %></div>
 <p>
   <%= link_to "Articles List", articles_path %> |
-  <%= link_to "Edit", edit_article_path(@article) %>
+  <%= link_to "Edit", edit_article_path(@article) %> |
+  <%= link_to "Delete", article_path(@article),
+      method: :delete,
+      data: { confirm: "are you sure?" } %>
 </p>
