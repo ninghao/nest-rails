@@ -5,6 +5,9 @@
   <li>
     <h2><%= link_to a.title, article_path(a) %></h2>
     <div><%= a.body %></div>
+    <p>
+      <%= link_to "Edit", edit_article_path(a) %>
+    </p>
   </li>
   <% end %>
 </ul>
