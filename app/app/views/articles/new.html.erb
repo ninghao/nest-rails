@@ -1,5 +1,4 @@
 <h1>New Article</h1>
-<%= "hello " + "world" %>
-<% 3.times do |i| %>
-<p><%= i + 1 %></p>
+
+<%= form_for :article, url: articles_path do |f| %>
 <% end %>
