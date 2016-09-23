@@ -2,3 +2,8 @@
   <%= comment.commenter %>：
   <%= comment.body %>
 </p>
+<p>
+  <%= link_to "Delete", [comment.article, comment],
+      method: :delete,
+      data: { confirm: "are you sure?" } %>
+</p>
