@@ -9,5 +9,5 @@ RUN gem install rails --pre --no-ri --no-rdoc
 RUN bundle config mirror.https://rubygems.org https://ruby.taobao.org
 RUN mkdir -p /mnt/app
 WORKDIR /mnt/app
-RUN rails new .
+RUN rails new . -d mysql
 EXPOSE 3000

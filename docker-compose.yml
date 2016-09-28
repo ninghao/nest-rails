@@ -10,6 +10,25 @@ services:
       - "3000:3000"
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     tty: true
+  db:
+    image: mariadb:10.1
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "app_development"
+      MYSQL_USER: "app"
+      MYSQL_PASSWORD: "123123"
+    volumes:
+      - db:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: "db"
+      PMA_USER: "root"
+      PMA_PASSWORD: "root"
 volumes:
   db:
     driver: local
