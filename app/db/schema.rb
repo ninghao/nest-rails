@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005031648) do
+ActiveRecord::Schema.define(version: 20161005070758) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "content",          limit: 65535
@@ -32,10 +32,11 @@ ActiveRecord::Schema.define(version: 20161005031648) do
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "format"
     t.boolean  "sticky"
+    t.integer  "lock_version"
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
