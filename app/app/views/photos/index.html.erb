@@ -1,3 +1,4 @@
 <%= render 'partials/navbar' %>
 <h1>photos</h1>
-<%= render partial: 'photo', collection: @photos, as: :item, layout: 'bordered' %>
+<%= render partial: 'photo', collection: @photos, as: :item, layout: 'bordered',
+locals: { type: 'photo' } %>
