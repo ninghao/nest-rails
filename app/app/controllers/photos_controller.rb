@@ -1,5 +1,11 @@
 class PhotosController < ApplicationController
+  layout 'one-column', except: ['show']
+
   def index
-    # redirect_to '/popular', status: 301
+
+  end
+
+  def show
+
   end
 end
