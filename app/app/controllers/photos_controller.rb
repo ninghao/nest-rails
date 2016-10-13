@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  layout 'one-column', except: ['show']
+  # layout 'one-column', except: ['show']
 
   def index
 
